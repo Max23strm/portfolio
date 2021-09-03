@@ -5,6 +5,7 @@ $Bittersweet:#FF6B6B;
 $Aquamarine:#61D095;
 $Gris:#D6D6D6;
 
+$breakPrimero: 740px;
 
 *{
     margin: 0;
@@ -23,9 +24,9 @@ html{
     }
 .scroll-up{
     nav{
-        
         transform:translate3d(0,0,0);
-        box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.75);    }
+        box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.75);  
+    }
 }
 nav{
     display: flex;
@@ -85,6 +86,7 @@ nav{
             bottom: 30vh;
             right: 2rem;
             width: 70vw;
+            z-index: -1;
         }
     }
 
@@ -110,6 +112,9 @@ nav{
     }
 }
 
+#scrolito {
+    animation: slide-top 2.2s ease-in-out infinite alternate-reverse both;
+}
 .secundaria{
     display: flex;
     flex-direction: column;
@@ -124,7 +129,7 @@ nav{
         font-size: 3rem;
     }
     .telefono{
-        width: 85vw;
+        width: 80vw;
         margin: 5vh 0;
     }
     ul{
@@ -237,4 +242,45 @@ nav{
         }
 
     }
+}
+
+@media (min-width: $breakPrimero){
+
+.principal{
+    .primera{
+        .textoPrincipal{
+            .nombre{
+                font-size: 3rem;
+            }
+            .puesto{
+            font-size: 2.5rem;
+            }
+        }
+        img{
+            width: 55vw;
+        }
+    }
+
+}
+.secundaria{
+    .telefono{
+        width: 60vw;
+    }
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        padding: 0;
+        width: 90vw;
+
+        li{
+            width: 25vw;
+            margin: 1rem 2rem;
+        }
+    }
+}
+
+    
 }

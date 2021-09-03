@@ -16,7 +16,7 @@ window.addEventListener("scroll", ()=>{
     }
     lastScroll=currentScroll;
 })
-
+    
 
 body.classList.remove("scroll-up");
 body.classList.add("scroll-up");
