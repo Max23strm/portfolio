@@ -20,3 +20,5 @@ window.addEventListener("scroll", ()=>{
 
 body.classList.remove("scroll-up");
 body.classList.add("scroll-up");
+
+    

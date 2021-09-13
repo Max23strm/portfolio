@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 62.5%;
@@ -84,17 +88,18 @@ nav button:hover {
   top: 20vh;
   left: 5vw;
   display: inline;
+  display: inline-block;
+  -webkit-animation: slide-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .principal .primera .textoPrincipal .nombre {
-  display: inline-block;
   font-weight: 800;
   font-size: 2rem;
   color: #FF6B6B;
 }
 
 .principal .primera .textoPrincipal .puesto {
-  display: inline-block;
   font-size: 1.8rem;
   font-weight: 500;
   color: #61D095;
@@ -110,52 +115,26 @@ nav button:hover {
 
 .principal .primera .escroll {
   position: absolute;
-  width: 40px;
-  top: 75%;
+  width: 70px;
+  top: 70%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
-.principal .segunda {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  bottom: 0;
+.principal .primera .escroll .palo-medio {
+  -webkit-animation: slide-medio 1.5s ease-in-out infinite alternate both;
+          animation: slide-medio 1.5s ease-in-out infinite alternate both;
 }
 
-.principal .escroll {
-  position: absolute;
-  top: 70vh;
+.principal .primera .escroll .palo-fuera {
+  -webkit-animation: slide-fuera 1.5s ease-in-out infinite alternate both;
+          animation: slide-fuera 1.5s ease-in-out infinite alternate both;
 }
 
-.principal .back {
-  position: absolute;
-  z-index: -90;
-  bottom: 0;
-  width: 100vw;
-  max-width: 100%;
-  left: 0;
-}
-
-.principal .alta {
-  display: block;
-}
-
-.principal .grande {
-  display: none;
-}
-
-#scrolito {
-  animation: slide-top 2.2s ease-in-out infinite alternate-reverse both;
+.principal .primera .escroll .palo-solo {
+  -webkit-animation: slide-solo 1s ease-in-out infinite alternate both;
+          animation: slide-solo 1s ease-in-out infinite alternate both;
 }
 
 .secundaria {
@@ -283,7 +262,7 @@ nav button:hover {
   overflow: hidden;
   background-image: url(../img/Vector-21.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
 }
 
 .cuarta .fondoCuarta {
@@ -410,7 +389,7 @@ footer p {
     width: 50vw;
   }
   .principal .primera .escroll {
-    top: 75%;
+    top: 65%;
   }
   .secundaria .telefono {
     width: 60vw;
@@ -472,8 +451,7 @@ footer p {
     width: 39vw;
   }
   .principal .primera .escroll {
-    width: 40px;
-    top: 70%;
+    top: 60%;
   }
   footer {
     padding: 3rem 30%;
@@ -503,11 +481,12 @@ footer p {
   }
   .principal .primera .proyecto {
     width: 30vw;
-    right: 20vw;
+    left: 50vw;
     bottom: 25vh;
   }
   .principal .primera .escroll {
-    width: 40px;
+    top: 65vh;
+    width: 100px;
   }
   .secundaria .telefono {
     width: 45vw;
@@ -538,6 +517,7 @@ footer p {
   .cuarta h1 {
     font-size: 5rem;
     padding-top: 5rem;
+    width: 100%;
   }
   .cuarta .contenido-cursos {
     margin: 6vw;
@@ -583,6 +563,50 @@ footer p {
   100% {
     background: #304D6D;
     color: #D6D6D6;
+  }
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slide-solo {
+  0% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  100% {
+    -webkit-transform: translateY(20);
+            transform: translateY(20);
+  }
+}
+
+@keyframes slide-solo {
+  0% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  100% {
+    -webkit-transform: translateY(20);
+            transform: translateY(20);
   }
 }
 /*# sourceMappingURL=style.css.map */
