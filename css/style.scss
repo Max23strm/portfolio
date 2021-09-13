@@ -6,10 +6,12 @@ $Aquamarine:#61D095;
 $Gris:#D6D6D6;
 
 $breakPrimero: 740px;
+$breakSegundo:900px;
+$breakTercero:1000px;
 
 *{
     margin: 0;
-    //overflow: hidden;
+    //overflow-x: hidden;
 
 }
 html{
@@ -25,29 +27,30 @@ html{
 .scroll-up{
     nav{
         transform:translate3d(0,0,0);
-        box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.75);  
+        box-shadow: 0px 10px 16px -8px rgba(0,0,0,0.75);  
     }
 }
 nav{
     display: flex;
     flex-direction: row;
-    width: 90vw;
+    width: 100%;
     justify-content: space-between;
-    padding: 2vh 5vw;
+    padding: 2vh 0;
     position: fixed;
     background-color: #fff;
     border-radius: 0 0 10px 10px;
     top: 0;
-    left: 0;
     z-index: 9990;
     transition: transform 300ms ease-in-out;
 
     .logo{
+        margin-left: 3vw;
         font-size: 3rem;
         font-weight: 800;
         color: $Yale;
     }
     button{
+        margin-right: 3vw;
         font-size: 1.5rem;
         border: none;
         background-color: $Bittersweet;
@@ -56,12 +59,22 @@ nav{
         font-weight: 500;
         padding: 1rem;
     }
+    button:hover{
+        cursor: pointer;
+   }
 }
 
 .principal{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
+    background-image: url(../img/Vector-1.svg);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+    z-index: -99;
+    
     .primera{
         .textoPrincipal{
             position: relative;
@@ -81,21 +94,26 @@ nav{
                 color: $Aquamarine;
             }
         }
-        img{
+        .proyecto{
             position: absolute;
             bottom: 30vh;
             right: 2rem;
-            width: 70vw;
+            width: 69vw;
             z-index: -1;
+        }
+        .escroll{
+            position: absolute;
+            width: 40px;
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 
     .segunda{
         display: flex;
         flex-direction: column;
-        text-align: center;
         align-items: center;
-        align-content: center;
         position: relative;
         bottom: 0;
     }
@@ -106,9 +124,16 @@ nav{
     .back{
         position: absolute;
         z-index: -90;
-        width: 100vw;
-        left: 0;
         bottom: 0;
+        width: 100vw;
+        max-width: 100%;
+        left: 0;
+    }
+    .alta{
+        display: block;
+    }
+    .grande{
+        display: none;
     }
 }
 
@@ -170,11 +195,21 @@ nav{
                 padding: 2vh 5vw;
             }
             a{
-                color: $Bittersweet;
-                font-weight: 700;
-                font-size: 2.5rem;
-                text-decoration: none;
-                padding: 2vh 0;
+                button{
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $Olive;
+                    color: $Gris;
+                    font-weight: 700;
+                    font-size: 2.5rem;
+                    text-decoration: none;
+                    padding: 2rem 3rem;
+                }
+                button:hover{
+                    background-color: $Bittersweet;
+                    color: $Yale;
+                    cursor: pointer;
+                }
             }
         }
         .imaEjemp{
@@ -197,53 +232,98 @@ nav{
 
 .cuarta{
     position: relative;
-
+    overflow: hidden;
+    background-image: url(../img/Vector-21.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     .fondoCuarta{
         position: absolute;
         z-index: -9;
-        width: 100vw;
+        width: 100%;
         top: -1px;
     }
 
+    .grande{
+        display: none;
+    }
+    .alta{
+        display: block;
+    }   
+
     h1{
-        color: $Bittersweet;
+        color: $Yale;
         font-size: 3rem;
         font-weight: 700;
         text-align: center;
     }
-
-    .curso{
-        background-color: $Bittersweet;
-        opacity: .9;
-        margin: 2vh 5vw;
-        padding: 1vh 0;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-        width: 90vw;
-        border-radius: 10px;
-        box-shadow: 7px 6px 15px 0px rgba(0,0,0,0.75);
-
-        img{
-            width: 70vw;
-            margin: 1vh 0;
-        }
-        ul{
+    .contenido-cursos{
+        .curso{
+            background-color: $Bittersweet;
+            opacity: .9;
+            margin: 2vh 5vw;
             padding: 1vh 0;
-            li{
-                text-decoration: none;
-                list-style: none;
-                text-align: center;
-                font-size: 2.5rem;
-                font-weight: 500;
-                padding: 1vh;
-            }
-        }
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            width: 90vw;
+            border-radius: 10px;
+            box-shadow: 7px 6px 15px 0px rgba(0,0,0,0.75);
 
+            img{
+                width: 70vw;
+                margin: 1vh 0;
+            }
+            ul{
+                padding: 1vh 0;
+                li{
+                    text-decoration: none;
+                    list-style: none;
+                    text-align: center;
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    padding: 1vh;
+                }
+            }
+
+        }
+    }    
+}
+footer{
+    background-color: #18091a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 3rem 10%;
+    text-align: center;
+    grid-template-areas: 
+    "boton1 boton2"
+    "derechos derechos";
+    a{
+        margin:3rem 2rem;
+        width: auto;
+        button{
+            margin:none;
+            border: none;
+            background-color: #18091a;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    }
+    a:first-child{
+        grid-area: boton1;
+    }
+    a:last-child{
+        grid-area:boton2;
+    }
+    p{
+        text-align: center;
+        grid-area: derechos;
+        color: $Aquamarine;
+        font-size: 2rem;
     }
 }
-
 @media (min-width: $breakPrimero){
 
 .principal{
@@ -256,8 +336,11 @@ nav{
             font-size: 2.5rem;
             }
         }
-        img{
-            width: 55vw;
+        .proyecto{
+            width: 50vw;
+        }
+        .escroll{
+            top: 75%;
         }
     }
 
@@ -267,20 +350,172 @@ nav{
         width: 60vw;
     }
     ul{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        align-content: center;
-        text-align: center;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
         padding: 0;
         width: 90vw;
+        justify-content: center;
+        list-style-type: none;
 
         li{
-            width: 25vw;
-            margin: 1rem 2rem;
+            width: auto;
+            text-align: center;
         }
     }
 }
 
-    
+.tercera{
+    .proye{
+       .imaEjemp{
+        flex-direction: row;
+        justify-content: space-around;
+        img{
+            width: 40vw;
+        }
+        }
+    }
 }
+
+.cuarta{
+    .contenido-cursos{
+        margin: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto; 
+        gap: 2rem;   
+        .curso{
+            width: 45vw;
+            margin: 0%;
+            img{
+                width: 35vw;
+            }
+        }
+    }
+}
+}
+@media (min-width: $breakSegundo){
+    .principal{
+        .primera{
+            .textoPrincipal{
+                left: 10vw;
+            }
+            .proyecto{
+                bottom: 35vh;
+                right: 10vw;
+                width: 39vw;
+            }
+            .escroll{
+                width: 40px;
+                top: 70%;
+            }
+        }
+    }
+    footer{
+        padding: 3rem 30%;
+    }
+}
+@media (min-width: $breakTercero){
+
+    nav{
+        .logo{
+            font-size: 4rem;
+        }
+        button{
+            font-size: 2rem;
+            border: none;
+            padding: 1.5rem;
+        }
+        button:hover{
+            background-color: $Yale;
+            animation: color-change-2x 1s ease-in-out alternate both;
+        }
+    }
+
+
+    .principal{
+        background-image: url(../img/Vector1000.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        background-size: contain;
+        z-index: -99;
+        .primera{
+            .proyecto{
+                width: 30vw;
+                right: 20vw;
+                bottom: 25vh;
+            }
+            .escroll{
+                width:40px;
+            }
+        }
+    }
+    .secundaria{
+        .telefono{
+            width: 45vw;
+        }
+    }
+    .tercera{
+        .proye{
+            flex-direction: row;
+            margin: 1rem 5vw;
+            .imaEjemp{
+                flex-direction: column;
+            }
+            .descript{
+                p{
+                    font-size: 2rem;
+                    line-height: 2.6rem;
+                }
+            }
+        }
+        .reversa{
+            flex-direction: row-reverse;
+        }
+    }
+
+    .cuarta{
+        
+        h1{
+            font-size: 5rem;
+            padding-top: 5rem;
+        }
+        .contenido-cursos{
+            margin: 6vw;
+            column-gap: 7vw;
+            .curso{
+                width: auto;
+                margin: 0%;
+                img{
+                    width: 25vw;
+                }
+            }
+        }
+    }
+    footer{
+        padding: 3rem 40%;
+    }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-9-11 9:27:48
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation color-change-2x
+ * ----------------------------------------
+ */
+  @keyframes color-change-2x {
+    0% {
+      background: $Bittersweet;
+    }
+    100% {
+      background: $Yale;
+      color: $Gris;
+    }
+  }
+  

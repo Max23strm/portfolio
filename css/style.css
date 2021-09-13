@@ -17,8 +17,8 @@ html {
 .scroll-up nav {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  -webkit-box-shadow: 10px 10px 16px -8px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 16px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 10px 16px -8px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 10px 16px -8px rgba(0, 0, 0, 0.75);
 }
 
 nav {
@@ -29,16 +29,15 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 90vw;
+  width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 2vh 5vw;
+  padding: 2vh 0;
   position: fixed;
   background-color: #fff;
   border-radius: 0 0 10px 10px;
   top: 0;
-  left: 0;
   z-index: 9990;
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   transition: -webkit-transform 300ms ease-in-out;
@@ -47,12 +46,14 @@ nav {
 }
 
 nav .logo {
+  margin-left: 3vw;
   font-size: 3rem;
   font-weight: 800;
   color: #304D6D;
 }
 
 nav button {
+  margin-right: 3vw;
   font-size: 1.5rem;
   border: none;
   background-color: #FF6B6B;
@@ -62,10 +63,20 @@ nav button {
   padding: 1rem;
 }
 
+nav button:hover {
+  cursor: pointer;
+}
+
 .principal {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
+  overflow: hidden;
+  background-image: url(../img/Vector-1.svg);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: contain;
+  z-index: -99;
 }
 
 .principal .primera .textoPrincipal {
@@ -89,12 +100,21 @@ nav button {
   color: #61D095;
 }
 
-.principal .primera img {
+.principal .primera .proyecto {
   position: absolute;
   bottom: 30vh;
   right: 2rem;
-  width: 70vw;
+  width: 69vw;
   z-index: -1;
+}
+
+.principal .primera .escroll {
+  position: absolute;
+  width: 40px;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .principal .segunda {
@@ -105,12 +125,9 @@ nav button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
   position: relative;
   bottom: 0;
 }
@@ -123,9 +140,18 @@ nav button {
 .principal .back {
   position: absolute;
   z-index: -90;
-  width: 100vw;
-  left: 0;
   bottom: 0;
+  width: 100vw;
+  max-width: 100%;
+  left: 0;
+}
+
+.principal .alta {
+  display: block;
+}
+
+.principal .grande {
+  display: none;
 }
 
 #scrolito {
@@ -209,12 +235,21 @@ nav button {
   padding: 2vh 5vw;
 }
 
-.tercera .proye .descript a {
-  color: #FF6B6B;
+.tercera .proye .descript a button {
+  border: none;
+  border-radius: 10px;
+  background-color: #393A10;
+  color: #D6D6D6;
   font-weight: 700;
   font-size: 2.5rem;
   text-decoration: none;
-  padding: 2vh 0;
+  padding: 2rem 3rem;
+}
+
+.tercera .proye .descript a button:hover {
+  background-color: #FF6B6B;
+  color: #304D6D;
+  cursor: pointer;
 }
 
 .tercera .proye .imaEjemp {
@@ -245,23 +280,35 @@ nav button {
 
 .cuarta {
   position: relative;
+  overflow: hidden;
+  background-image: url(../img/Vector-21.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cuarta .fondoCuarta {
   position: absolute;
   z-index: -9;
-  width: 100vw;
+  width: 100%;
   top: -1px;
 }
 
+.cuarta .grande {
+  display: none;
+}
+
+.cuarta .alta {
+  display: block;
+}
+
 .cuarta h1 {
-  color: #FF6B6B;
+  color: #304D6D;
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
 }
 
-.cuarta .curso {
+.cuarta .contenido-cursos .curso {
   background-color: #FF6B6B;
   opacity: .9;
   margin: 2vh 5vw;
@@ -284,22 +331,72 @@ nav button {
           box-shadow: 7px 6px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
-.cuarta .curso img {
+.cuarta .contenido-cursos .curso img {
   width: 70vw;
   margin: 1vh 0;
 }
 
-.cuarta .curso ul {
+.cuarta .contenido-cursos .curso ul {
   padding: 1vh 0;
 }
 
-.cuarta .curso ul li {
+.cuarta .contenido-cursos .curso ul li {
   text-decoration: none;
   list-style: none;
   text-align: center;
   font-size: 2.5rem;
   font-weight: 500;
   padding: 1vh;
+}
+
+footer {
+  background-color: #18091a;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  padding: 3rem 10%;
+  text-align: center;
+      grid-template-areas: "boton1 boton2" "derechos derechos";
+}
+
+footer a {
+  margin: 3rem 2rem;
+  width: auto;
+}
+
+footer a button {
+  margin: none;
+  border: none;
+  background-color: #18091a;
+}
+
+footer a button:hover {
+  cursor: pointer;
+}
+
+footer a:first-child {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: boton1;
+}
+
+footer a:last-child {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: boton2;
+}
+
+footer p {
+  text-align: center;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: derechos;
+  color: #61D095;
+  font-size: 2rem;
 }
 
 @media (min-width: 740px) {
@@ -309,30 +406,183 @@ nav button {
   .principal .primera .textoPrincipal .puesto {
     font-size: 2.5rem;
   }
-  .principal .primera img {
-    width: 55vw;
+  .principal .primera .proyecto {
+    width: 50vw;
+  }
+  .principal .primera .escroll {
+    top: 75%;
   }
   .secundaria .telefono {
     width: 60vw;
   }
   .secundaria ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    text-align: center;
+    display: -ms-grid;
+    display: grid;
+    gap: 2rem;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     padding: 0;
     width: 90vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style-type: none;
   }
   .secundaria ul li {
+    width: auto;
+    text-align: center;
+  }
+  .tercera .proye .imaEjemp {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .tercera .proye .imaEjemp img {
+    width: 40vw;
+  }
+  .cuarta .contenido-cursos {
+    margin: 2rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    gap: 2rem;
+  }
+  .cuarta .contenido-cursos .curso {
+    width: 45vw;
+    margin: 0%;
+  }
+  .cuarta .contenido-cursos .curso img {
+    width: 35vw;
+  }
+}
+
+@media (min-width: 900px) {
+  .principal .primera .textoPrincipal {
+    left: 10vw;
+  }
+  .principal .primera .proyecto {
+    bottom: 35vh;
+    right: 10vw;
+    width: 39vw;
+  }
+  .principal .primera .escroll {
+    width: 40px;
+    top: 70%;
+  }
+  footer {
+    padding: 3rem 30%;
+  }
+}
+
+@media (min-width: 1000px) {
+  nav .logo {
+    font-size: 4rem;
+  }
+  nav button {
+    font-size: 2rem;
+    border: none;
+    padding: 1.5rem;
+  }
+  nav button:hover {
+    background-color: #304D6D;
+    -webkit-animation: color-change-2x 1s ease-in-out alternate both;
+            animation: color-change-2x 1s ease-in-out alternate both;
+  }
+  .principal {
+    background-image: url(../img/Vector1000.svg);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+    z-index: -99;
+  }
+  .principal .primera .proyecto {
+    width: 30vw;
+    right: 20vw;
+    bottom: 25vh;
+  }
+  .principal .primera .escroll {
+    width: 40px;
+  }
+  .secundaria .telefono {
+    width: 45vw;
+  }
+  .tercera .proye {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 1rem 5vw;
+  }
+  .tercera .proye .imaEjemp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .tercera .proye .descript p {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+  .tercera .reversa {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .cuarta h1 {
+    font-size: 5rem;
+    padding-top: 5rem;
+  }
+  .cuarta .contenido-cursos {
+    margin: 6vw;
+    -webkit-column-gap: 7vw;
+            column-gap: 7vw;
+  }
+  .cuarta .contenido-cursos .curso {
+    width: auto;
+    margin: 0%;
+  }
+  .cuarta .contenido-cursos .curso img {
     width: 25vw;
-    margin: 1rem 2rem;
+  }
+  footer {
+    padding: 3rem 40%;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-9-11 9:27:48
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation color-change-2x
+ * ----------------------------------------
+ */
+@-webkit-keyframes color-change-2x {
+  0% {
+    background: #FF6B6B;
+  }
+  100% {
+    background: #304D6D;
+    color: #D6D6D6;
+  }
+}
+@keyframes color-change-2x {
+  0% {
+    background: #FF6B6B;
+  }
+  100% {
+    background: #304D6D;
+    color: #D6D6D6;
   }
 }
 /*# sourceMappingURL=style.css.map */
