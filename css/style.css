@@ -194,6 +194,11 @@ nav button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #4ca575;
+  border-radius: 20px;
+  margin: 2rem 2rem;
+  -webkit-box-shadow: 4px 6px 5px 0px rgba(61, 38, 38, 0.75);
+          box-shadow: 4px 6px 5px 0px rgba(61, 38, 38, 0.75);
 }
 
 .tercera .proye .descript {
@@ -201,17 +206,20 @@ nav button:hover {
   padding: 2vh 0;
 }
 
-.tercera .proye .descript h2 {
+.tercera .proye .descript h3 {
   color: #161616;
   font-weight: 700;
   font-size: 2.5rem;
+  padding-bottom: 2rem;
+  margin: 2rem 0;
+  border-bottom: 2px solid #61D095;
 }
 
 .tercera .proye .descript p {
   color: #161616;
   font-weight: 500;
-  font-size: 1.5rem;
-  padding: 2vh 5vw;
+  font-size: 1.8rem;
+  padding: 2vh 6vw;
 }
 
 .tercera .proye .descript a button {
@@ -250,6 +258,10 @@ nav button:hover {
   width: 80vw;
   border-radius: 10px;
   margin-bottom: 2vh;
+}
+
+.tercera .proye:hover {
+  background-color: #34a76a;
 }
 
 .tercera .separador {
@@ -326,6 +338,11 @@ nav button:hover {
   font-size: 2.5rem;
   font-weight: 500;
   padding: 1vh;
+}
+
+.cuarta .contenido-cursos .curso ul .subtema {
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 footer {
@@ -411,34 +428,54 @@ footer p {
     width: auto;
     text-align: center;
   }
-  .tercera .proye .imaEjemp {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  .tercera .proye .imaEjemp img {
-    width: 40vw;
-  }
-  .cuarta .contenido-cursos {
-    margin: 2rem;
+  .tercera .grupoProyectos {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-    gap: 2rem;
+    gap: 1rem;
+    row-gap: 2rem;
   }
-  .cuarta .contenido-cursos .curso {
+  .tercera .grupoProyectos .separador {
+    display: none;
+  }
+  .tercera .grupoProyectos .proye {
+    margin: 0 auto;
     width: 45vw;
-    margin: 0%;
   }
-  .cuarta .contenido-cursos .curso img {
-    width: 35vw;
+  .tercera .grupoProyectos .proye .imaEjemp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
+  .tercera .grupoProyectos .proye img {
+    width: 40vw;
+  }
+}
+
+.cuarta .contenido-cursos {
+  margin: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 2rem;
+}
+
+.cuarta .contenido-cursos .curso {
+  width: 45vw;
+  margin: 0%;
+}
+
+.cuarta .contenido-cursos .curso img {
+  width: 35vw;
 }
 
 @media (min-width: 900px) {
@@ -489,22 +526,28 @@ footer p {
     width: 100px;
   }
   .secundaria .telefono {
-    width: 45vw;
+    width: 35vw;
   }
-  .tercera .proye {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    margin: 1rem 5vw;
+  .secundaria ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
-  .tercera .proye .imaEjemp {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .tercera {
+    padding-top: 10rem;
   }
-  .tercera .proye .descript p {
+  .tercera .grupoProyectos {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  .tercera .grupoProyectos .proye {
+    width: 30vw;
+  }
+  .tercera .grupoProyectos .proye img {
+    width: 28vw;
+  }
+  .tercera .grupoProyectos .proye .descript p {
     font-size: 2rem;
     line-height: 2.6rem;
   }

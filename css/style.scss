@@ -148,6 +148,7 @@ nav{
             font-weight: 700;
             margin: 2vh 0;
         }
+        
     }
 }
 
@@ -160,23 +161,31 @@ nav{
         color: $Olive;
         text-align: center;
         padding: 0 0 5vh 0;
+        
     }
     .proye{
         display: flex;
         flex-direction: column;
+        background-color: #4ca575;
+        border-radius: 20px;
+        margin: 2rem 2rem;
+        box-shadow: 4px 6px 5px 0px rgba(61,38,38,0.75);
         .descript{
             text-align: center;
             padding: 2vh 0;
-            h2{
+            h3{
                 color: #161616;
                 font-weight: 700;
                 font-size: 2.5rem;
+                padding-bottom: 2rem;
+                margin: 2rem 0;
+                border-bottom: 2px solid $Aquamarine;
             }
             p{
                 color: #161616;
                 font-weight: 500;
-                font-size: 1.5rem;
-                padding: 2vh 5vw;
+                font-size: 1.8rem;
+                padding: 2vh 6vw;
             }
             a{
                 button{
@@ -207,6 +216,10 @@ nav{
                 margin-bottom: 2vh;
             }
         }
+    }
+    .proye:hover{
+        background-color: #34a76a;
+        
     }
     .separador{
         width: 90vw;
@@ -267,6 +280,10 @@ nav{
                     font-size: 2.5rem;
                     font-weight: 500;
                     padding: 1vh;
+                }
+                .subtema{
+                    font-size: 2rem;
+                    font-weight: 400;
                 }
             }
 
@@ -349,14 +366,28 @@ footer{
     }
 }
 
-.tercera{
+.tercera{ 
+    .grupoProyectos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+        row-gap: 2rem;
+    .separador{
+        display: none;
+    }
     .proye{
-       .imaEjemp{
-        flex-direction: row;
-        justify-content: space-around;
-        img{
-            width: 40vw;
-        }
+        margin: 0 auto;
+        width: 45vw;
+            .imaEjemp{
+            flex-direction: column;
+            justify-content: space-around;
+            
+            }
+            img{
+                width: 40vw;
+                }
+            }
         }
     }
 }
@@ -377,7 +408,7 @@ footer{
         }
     }
 }
-}
+
 @media (min-width: $breakSegundo){
     .principal{
         .primera{
@@ -399,7 +430,7 @@ footer{
     }
 }
 @media (min-width: $breakTercero){
-
+    
     nav{
         .logo{
             font-size: 4rem;
@@ -414,8 +445,8 @@ footer{
             animation: color-change-2x 1s ease-in-out alternate both;
         }
     }
-
-
+    
+    
     .principal{
         background-image: url(../img/Vector1000.svg);
         background-repeat: no-repeat;
@@ -436,20 +467,27 @@ footer{
     }
     .secundaria{
         .telefono{
-            width: 45vw;
+            width: 35vw;
+        }
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
         }
     }
     .tercera{
-        .proye{
-            flex-direction: row;
-            margin: 1rem 5vw;
-            .imaEjemp{
-                flex-direction: column;
-            }
-            .descript{
-                p{
-                    font-size: 2rem;
-                    line-height: 2.6rem;
+        padding-top: 10rem;
+        .grupoProyectos{
+            grid-template-columns: 1fr 1fr 1fr;
+            .proye{
+                width: 30vw;
+                img{
+                    width: 28vw;
+                }
+                .descript{
+                    p{
+                        font-size: 2rem;
+                        line-height: 2.6rem;
+                    }
                 }
             }
         }
