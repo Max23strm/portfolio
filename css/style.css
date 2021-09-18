@@ -277,26 +277,21 @@ nav button:hover {
   background-size: 100%;
 }
 
-.cuarta .fondoCuarta {
-  position: absolute;
-  z-index: -9;
-  width: 100%;
-  top: -1px;
-}
-
-.cuarta .grande {
-  display: none;
-}
-
-.cuarta .alta {
-  display: block;
-}
-
 .cuarta h1 {
   color: #304D6D;
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
+}
+
+.cuarta .contenido-cursos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .cuarta .contenido-cursos .curso {
@@ -335,7 +330,7 @@ nav button:hover {
   text-decoration: none;
   list-style: none;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 500;
   padding: 1vh;
 }
@@ -456,26 +451,23 @@ footer p {
   .tercera .grupoProyectos .proye img {
     width: 40vw;
   }
-}
-
-.cuarta .contenido-cursos {
-  margin: 2rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  gap: 2rem;
-}
-
-.cuarta .contenido-cursos .curso {
-  width: 45vw;
-  margin: 0%;
-}
-
-.cuarta .contenido-cursos .curso img {
-  width: 35vw;
+  .cuarta .contenido-cursos {
+    margin: 2rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    gap: 2rem;
+  }
+  .cuarta .contenido-cursos .curso {
+    width: 45vw;
+    margin: 0%;
+  }
+  .cuarta .contenido-cursos .curso img {
+    width: 35vw;
+  }
 }
 
 @media (min-width: 900px) {

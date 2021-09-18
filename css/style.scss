@@ -179,7 +179,7 @@ nav{
                 font-size: 2.5rem;
                 padding-bottom: 2rem;
                 margin: 2rem 0;
-                border-bottom: 2px solid $Aquamarine;
+                border-bottom: 2px solid     $Aquamarine;
             }
             p{
                 color: #161616;
@@ -233,19 +233,6 @@ nav{
     background-image: url(../img/Vector-21.svg);
     background-repeat: no-repeat;
     background-size: 100%;
-    .fondoCuarta{
-        position: absolute;
-        z-index: -9;
-        width: 100%;
-        top: -1px;
-    }
-
-    .grande{
-        display: none;
-    }
-    .alta{
-        display: block;
-    }   
 
     h1{
         color: $Yale;
@@ -254,6 +241,8 @@ nav{
         text-align: center;
     }
     .contenido-cursos{
+        display: flex;
+        flex-direction: column;
         .curso{
             background-color: $Bittersweet;
             opacity: .9;
@@ -277,7 +266,7 @@ nav{
                     text-decoration: none;
                     list-style: none;
                     text-align: center;
-                    font-size: 2.5rem;
+                    font-size: 2.3rem;
                     font-weight: 500;
                     padding: 1vh;
                 }
@@ -327,83 +316,83 @@ footer{
 }
 @media (min-width: $breakPrimero){
 
-.principal{
-    .primera{
-        .textoPrincipal{
-            .nombre{
-                font-size: 3rem;
+    .principal{
+        .primera{
+            .textoPrincipal{
+                .nombre{
+                    font-size: 3rem;
+                }
+                .puesto{
+                font-size: 2.5rem;
+                }
             }
-            .puesto{
-            font-size: 2.5rem;
+            .proyecto{
+                width: 50vw;
+            }
+            .escroll{
+                top: 65%;
             }
         }
-        .proyecto{
-            width: 50vw;
+
+    }
+    .secundaria{
+        .telefono{
+            width: 60vw;
         }
-        .escroll{
-            top: 65%;
+        ul{
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            padding: 0;
+            width: 90vw;
+            justify-content: center;
+            list-style-type: none;
+
+            li{
+                width: auto;
+                text-align: center;
+            }
         }
     }
 
-}
-.secundaria{
-    .telefono{
-        width: 60vw;
-    }
-    ul{
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: 1fr 1fr;
-        padding: 0;
-        width: 90vw;
-        justify-content: center;
-        list-style-type: none;
-
-        li{
-            width: auto;
-            text-align: center;
+    .tercera{ 
+        .grupoProyectos{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 1rem;
+            row-gap: 2rem;
+        .separador{
+            display: none;
         }
-    }
-}
-
-.tercera{ 
-    .grupoProyectos{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 1rem;
-        row-gap: 2rem;
-    .separador{
-        display: none;
-    }
-    .proye{
-        margin: 0 auto;
-        width: 45vw;
-            .imaEjemp{
-            flex-direction: column;
-            justify-content: space-around;
-            
-            }
-            img{
-                width: 40vw;
+        .proye{
+            margin: 0 auto;
+            width: 45vw;
+                .imaEjemp{
+                flex-direction: column;
+                justify-content: space-around;
+                
+                }
+                img{
+                    width: 40vw;
+                    }
                 }
             }
         }
-    }
-}
-
-.cuarta{
-    .contenido-cursos{
-        margin: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto; 
-        gap: 2rem;   
-        .curso{
-            width: 45vw;
-            margin: 0%;
-            img{
-                width: 35vw;
+        
+        .cuarta{
+        .contenido-cursos{
+            margin: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto; 
+            gap: 2rem;   
+            .curso{
+                width: 45vw;
+                margin: 0%;
+                img{
+                    width: 35vw;
+                }
             }
         }
     }
